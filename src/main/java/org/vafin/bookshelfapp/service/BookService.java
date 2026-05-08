@@ -2,6 +2,7 @@ package org.vafin.bookshelfapp.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.vafin.bookshelfapp.exception.BookNotFoundException;
 import org.vafin.bookshelfapp.model.Book;
 import org.vafin.bookshelfapp.repository.BookRepository;
 
@@ -28,7 +29,7 @@ public class BookService {
     public Book updateBook(Long id, Book updatedBook) {
         Book book = this.bookRepository
                 .findById(id)
-                .orElseThrow(() -> new RuntimeException("Book not found"));
+                .orElseThrow(() -> new BookNotFoundException(id));
         book.setTitle(updatedBook.getTitle());
         book.setAuthor(updatedBook.getAuthor());
         book.setIsbn(updatedBook.getIsbn());
