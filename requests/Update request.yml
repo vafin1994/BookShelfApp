@@ -1,0 +1,26 @@
+info:
+  name: Update request
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: http://localhost:8080/books/1
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Clean Code",
+        "author": "Robert C. Martin",
+        "isbn": "9780132350884",
+        "publishingYear": 2008,
+        "genre": "Software Engineering",
+        "language": "English"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
