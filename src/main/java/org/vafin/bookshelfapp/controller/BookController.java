@@ -2,10 +2,12 @@ package org.vafin.bookshelfapp.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.vafin.bookshelfapp.model.Book;
+import org.vafin.bookshelfapp.model.PageResponse;
 import org.vafin.bookshelfapp.service.BookService;
 
 import java.util.List;
@@ -17,8 +19,13 @@ public class BookController {
     private final BookService bookService;
 
     @GetMapping
-    public List<Book> getAllBooks() {
-        return bookService.getAllBooks();
+    public ResponseEntity<PageResponse<Book>> getAllBooks(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "title") String sortBy
+    ) {
+        PageResponse<Book> pageResponse = PageResponse.from(bookService.getAllBooks(page, size, sortBy));
+        return ResponseEntity.ok(pageResponse);
     }
 
     @GetMapping("/{id}")
