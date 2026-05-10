@@ -24,7 +24,7 @@ public class PageResponse<T> {
                 page.getNumber(),
                 page.getSize(),
                 page.getNumberOfElements(),
-                page.getTotalPages(),
+                page.getTotalElements(),
                 page.getTotalPages(),
                 page.isFirst(),
                 page.isLast()
