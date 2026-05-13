@@ -44,4 +44,12 @@ public class GlobalExceptionHandler {
                 .body(new ErrorResponse(message));
     }
 
+    // Handle author not found error
+    @ExceptionHandler(AuthorNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleAuthorNotFound(AuthorNotFoundException ex) {
+        String errorMessage = ex.getMessage();
+        ErrorResponse errorResponse = new ErrorResponse(errorMessage);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
+    }
+
 }
