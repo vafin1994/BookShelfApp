@@ -25,10 +25,15 @@ public class AuthorService {
     public Author addAuthor(Author author) {
         return authorRepository.save(author);
     }
-//
-//    public Author updateAuthor(Long id, Author author) {
-//
-//    }
+
+    public Author updateAuthor(Long id, Author updatedAuthor) {
+        Author author = authorRepository.findById(id)
+                .orElseThrow(() -> new AuthorNotFoundException(id));
+        author.setName(updatedAuthor.getName());
+        author.setCountry(updatedAuthor.getCountry());
+
+        return authorRepository.save(author);
+    }
 
     public void deleteAuthor(Long id) {
         authorRepository.deleteById(id);
