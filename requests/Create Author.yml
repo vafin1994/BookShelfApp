@@ -5,7 +5,14 @@ info:
 
 http:
   method: POST
-  url: http://localhost:6880/authors
+  url: http://localhost:8080/authors
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Robert C. Martin",
+        "country": "USA"
+      }
   auth: inherit
 
 settings:
