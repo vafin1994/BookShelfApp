@@ -10,8 +10,8 @@ http:
     type: json
     data: |-
       {
-        "name": "Robert C. Martin",
-        "country": "USA"
+        "name": "John R. R. Tolkien",
+        "country": "United Kingdom"
       }
   auth: inherit
 

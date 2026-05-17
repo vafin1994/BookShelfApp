@@ -11,8 +11,8 @@ http:
     data: |-
       {
         "title": "Clean Code",
-        "authorId": "1",
-        "isbn": "9780132350884",
+        "authorId": 1,
+        "isbn": "9730132350884",
         "publishingYear": 2008,
         "genre": "Programming",
         "language": "English"
