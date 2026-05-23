@@ -2,6 +2,11 @@
 
 A full-stack book library application built for learning purposes. This project covers the fundamentals of modern web development with a Java backend and Angular frontend.
 
+## Deploy
+Deployed with ngrok, hosted locally 
+
+Forwarding: https://unwary-freeness-return.ngrok-free.dev -> http://localhost:8080
+
 ## Tech Stack
 
 **Backend**
@@ -11,7 +16,8 @@ A full-stack book library application built for learning purposes. This project 
 - PostgreSQL
 
 **Frontend**
-- Angular (coming soon)
+- https://github.com/vafin1994/BookShelfApp-Frontend
+- https://bookshelfapp-indol.vercel.app/
 
 ## Features
 
